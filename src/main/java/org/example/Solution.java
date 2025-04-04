@@ -1,24 +1,16 @@
 package org.example;
 
-// 프로그래머스 삼각형의 완성조건(1)
+// 프로그래머스 배열의 유사도
 
 class Solution {
-    public int solution(int[] sides) {
+    public int solution(String[] s1, String[] s2) {
         int answer = 0;
-        int max;
-        if(sides[0] > sides[1] && sides[0] > sides[2]){
-            max = sides[0];
-        } else if(sides[1] > sides[0] && sides[1] > sides[2]) {
-            max = sides[1];
-        } else {
-            max = sides[2];
-        }
-
-        int triangle = sides[0]+sides[1]+sides[2];
-        if(triangle - max > max) {
-            answer = 1;
-        } else {
-            answer = 2;
+        for(String a : s1) {
+            for(int i = 0; i < s2.length; i++) {
+                if(a.equals(s2[i])){
+                    answer++;
+                }
+            }
         }
         return answer;
     }
