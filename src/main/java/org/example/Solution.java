@@ -1,15 +1,16 @@
 package org.example;
 
-// 프로그래머스 모음 제거
+// 프로그래머스 배열 원소의 길이
 
 class Solution {
-    public String solution(String my_string) {
-        String answer = "";
-        for(int i = 0; i < my_string.length(); i++) {
-            char aeiou = my_string.charAt(i);
-            if(aeiou != 'a' && aeiou != 'e' && aeiou != 'i' && aeiou != 'o' && aeiou != 'u' ){
-                answer += aeiou;
+    public int[] solution(String[] strlist) {
+        int[] answer = new int[strlist.length];
+        for(int i = 0; i < strlist.length; i++){
+            int lenth = 0;
+            for(int j = 0; j < strlist[i].length(); j++){
+                lenth++;
             }
+            answer[i] = lenth;
         }
         return answer;
     }
