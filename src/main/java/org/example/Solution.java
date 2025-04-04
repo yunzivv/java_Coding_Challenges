@@ -1,17 +1,11 @@
 package org.example;
 
-// 프로그래머스 배열의 유사도
+// 프로그래머스 나이 출력
 
 class Solution {
-    public int solution(String[] s1, String[] s2) {
+    public int solution(int age) {
         int answer = 0;
-        for(String a : s1) {
-            for(int i = 0; i < s2.length; i++) {
-                if(a.equals(s2[i])){
-                    answer++;
-                }
-            }
-        }
+        answer = 2022 - age + 1;
         return answer;
     }
 }
