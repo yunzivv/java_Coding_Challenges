@@ -1,15 +1,17 @@
 package org.example;
 
-// 프로그래머스 문자열안에 문자열
+// 프로그래머스 아이스 아메리카노
 
 class Solution {
-    public int solution(String str1, String str2) {
-        int answer = 0;
-        if(str1.contains(str2)){
-            answer = 1;
-        } else {
-            answer = 2;
+    public int[] solution(int money) {
+        int[] answer = new int[2];
+        int coffee = 0;
+        while(money >= 5500) {
+            money -= 5500;
+            coffee++;
         }
+        answer[0] = coffee;
+        answer[1] = money;
         return answer;
     }
 }
