@@ -1,17 +1,15 @@
 package org.example;
 
-// 프로그래머스 아이스 아메리카노
+// 프로그래머스 순서쌍의 개수
 
 class Solution {
-    public int[] solution(int money) {
-        int[] answer = new int[2];
-        int coffee = 0;
-        while(money >= 5500) {
-            money -= 5500;
-            coffee++;
+    public int solution(int n) {
+        int answer = 0;
+        for(int i = 1; i <= n; i++){
+            if(n % i == 0) {
+                answer++;
+            }
         }
-        answer[0] = coffee;
-        answer[1] = money;
         return answer;
     }
 }
