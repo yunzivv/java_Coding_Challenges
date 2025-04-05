@@ -1,13 +1,14 @@
 package org.example;
 
-// 프로그래머스 자릿수 더하기
+// 프로그래머스 문자열안에 문자열
 
 class Solution {
-    public int solution(int n) {
+    public int solution(String str1, String str2) {
         int answer = 0;
-        while(n > 0) {
-            answer += n % 10;
-            n /= 10;
+        if(str1.contains(str2)){
+            answer = 1;
+        } else {
+            answer = 2;
         }
         return answer;
     }
