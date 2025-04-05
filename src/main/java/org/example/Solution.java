@@ -1,14 +1,13 @@
 package org.example;
 
-// 프로그래머스 문자 반복 출력하기
+// 프로그래머스 머쓱이보다 키 큰 사람
 
 class Solution {
-    public String solution(String my_string, int n) {
-        String answer = "";
-        for(int i = 0; i < my_string.length(); i++) {
-            char c = my_string.charAt(i);
-            for(int repeat = 0; repeat < n; repeat++) {
-                answer += c;
+    public int solution(int[] array, int height) {
+        int answer = 0;
+        for(int h : array) {
+            if(h > height) {
+                answer++;
             }
         }
         return answer;
