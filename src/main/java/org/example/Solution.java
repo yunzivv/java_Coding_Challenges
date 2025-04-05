@@ -1,15 +1,19 @@
 package org.example;
 
-// 프로그래머스 머쓱이보다 키 큰 사람
+// 프로그래머스 짝수 홀수 개수
 
 class Solution {
-    public int solution(int[] array, int height) {
-        int answer = 0;
-        for(int h : array) {
-            if(h > height) {
-                answer++;
+    public int[] solution(int[] num_list) {
+        int even = 0;
+        int odd = 0;
+        for(int i = 0; i < num_list.length; i++) {
+            if(num_list[i] % 2 == 0) {
+                even++;
+            }else {
+                odd++;
             }
         }
+        int[] answer = {even, odd};
         return answer;
     }
 }
