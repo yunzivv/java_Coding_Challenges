@@ -1,19 +1,15 @@
 package org.example;
 
-// 프로그래머스 제곱수 판별하기
+// 프로그래머스 문자 반복 출력하기
 
 class Solution {
-    public int solution(int n) {
-        int answer = 0;
-        for(int i = 1; i <= n; i++){
-            if(n % i == 0) {
-                answer++;
+    public String solution(String my_string, int n) {
+        String answer = "";
+        for(int i = 0; i < my_string.length(); i++) {
+            char c = my_string.charAt(i);
+            for(int repeat = 0; repeat < n; repeat++) {
+                answer += c;
             }
-        }
-        if(answer % 2 == 0) {
-            answer = 2;
-        } else {
-            answer = 1;
         }
         return answer;
     }
