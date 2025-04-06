@@ -1,20 +1,14 @@
 package org.example;
 
-// 프로그래머스 중앙 값 구하기
+// 프로그래머스 짝수는 싫어요
 class Solution {
-    public int solution(int[] array) {
-        int answer = 0;
-        int temp;
-        for(int i = 0; i < array.length; i++){
-            for(int j = 0; j < array.length; j++){
-                if(array[i] > array[j]) {
-                    temp = array[i];
-                    array[i] = array[j];
-                    array[j] = temp;
-                }
-            }
+    public int[] solution(int n) {
+        int[] answer = new int[(n+1)/2];
+        int odd = 1;
+        for(int i = 0; i < (n+1)/2; i++) {
+            answer[i] = odd;
+            odd += 2;
         }
-        answer = array[array.length / 2];
         return answer;
     }
 }
