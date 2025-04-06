@@ -1,13 +1,11 @@
 package org.example;
 
-// 프로그래머스 중복된 숫자 개수
+// 프로그래머스 배열 두배 만들기
 class Solution {
-    public int solution(int[] array, int n) {
-        int answer = 0;
-        for(int i =0; i < array.length; i++){
-            if (array[i] == n){
-                answer++;
-            }
+    public int[] solution(int[] numbers) {
+        int[] answer = new int[numbers.length];
+        for(int i = 0; i < numbers.length; i++){
+            answer[i] = numbers[i]*2;
         }
         return answer;
     }
