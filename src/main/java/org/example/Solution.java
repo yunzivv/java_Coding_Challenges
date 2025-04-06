@@ -1,17 +1,23 @@
 package org.example;
 
-// 프로그래머스 직각삼각형 출력하기
+// 프로그래머스 개미 군단
 import java.util.Scanner;
 
-public class Solution {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        for(int i = 0; i < n; i++){
-            for(int j = 1; j <= i + 1; j++){
-                System.out.print("*");
+class Solution {
+    public int solution(int hp) {
+        int answer = 0;
+        while(hp > 0) {
+            if (hp >= 5){
+                hp -= 5;
+                answer++;
+            } else if (hp >=3 ){
+                hp -= 3;
+                answer++;
+            } else if (hp >= 1 ){
+                hp -= 1;
+                answer++;
             }
-            System.out.println();
         }
+        return answer;
     }
 }
