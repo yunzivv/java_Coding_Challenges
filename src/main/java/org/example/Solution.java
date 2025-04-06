@@ -1,12 +1,13 @@
 package org.example;
 
-// 프로그래머스 문자열 곱하기
-
+// 프로그래머스 중복된 숫자 개수
 class Solution {
-    public String solution(String my_string, int k) {
-        String answer = "";
-        for(int i = 0; i < k; i++) {
-            answer += my_string;
+    public int solution(int[] array, int n) {
+        int answer = 0;
+        for(int i =0; i < array.length; i++){
+            if (array[i] == n){
+                answer++;
+            }
         }
         return answer;
     }
