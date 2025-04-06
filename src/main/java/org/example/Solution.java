@@ -1,13 +1,15 @@
 package org.example;
 
-// 프로그래머스 짝수는 싫어요
+// 프로그래머스 옷가게 할인 받기
 class Solution {
-    public int[] solution(int n) {
-        int[] answer = new int[(n+1)/2];
-        int odd = 1;
-        for(int i = 0; i < (n+1)/2; i++) {
-            answer[i] = odd;
-            odd += 2;
+    public int solution(int price) {
+        int answer = price;
+        if(price >= 500000) {
+            answer = (int)(price * 0.8);
+        } else if(price >= 300000) {
+            answer = (int)(price * 0.9);
+        } else if(price >= 100000) {
+            answer = (int)(price * 0.95);
         }
         return answer;
     }
