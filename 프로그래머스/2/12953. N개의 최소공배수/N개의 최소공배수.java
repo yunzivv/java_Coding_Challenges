@@ -2,10 +2,8 @@ class Solution {
     public int solution(int[] arr) {
         int answer = 0;
         
-        // int product = 1;
         int big = 0;
         for (int n : arr) {
-            // product *= n;
             if(big < n) big = n;
         }
         
