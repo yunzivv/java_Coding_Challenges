@@ -12,10 +12,9 @@ class Solution {
         
         int triangle = sides[0]+sides[1]+sides[2];
         if(triangle - max > max) {
-            answer = 1;
+            return 1;
         } else {
-            answer = 2;
+            return 2;
         }
-        return answer;
     }
 }
