@@ -1,13 +1,10 @@
 class Solution {
     public int[] solution(int money) {
-        int[] answer = new int[2];
-        int coffee = 0;
-        while(money >= 5500) {
-            money -= 5500;
-            coffee++;
+        int[] answer = {0, money};
+        while(answer[1] >= 5500) {
+            answer[0]++;
+            answer[1] -= 5500; 
         }
-        answer[0] = coffee;
-        answer[1] = money;
         return answer;
     }
 }
