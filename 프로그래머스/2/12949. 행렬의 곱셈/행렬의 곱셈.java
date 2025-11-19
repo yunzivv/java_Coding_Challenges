@@ -1,8 +1,8 @@
 class Solution {
     public int[][] solution(int[][] arr1, int[][] arr2) {
         
-        int index = arr1[0].length;
         int row = arr1.length;
+        int index = arr1[0].length;
         int column = arr2[0].length;
         
         
