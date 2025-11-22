@@ -14,25 +14,34 @@ class Solution {
         int n = now[0] * 100 + now[1];
         
         for(String s : commands){
+            
+            // 오프닝 체크
             if(start <= n && end >= n){
                 now[0] = end / 100;
                 now[1] = end % 100;
                 System.out.println("skip: " + now[0] + ":" + now[1]);
             }
+            
+            // next
             if(s.startsWith("n")){
                 now[0] += (now[1] + 10) / 60;
                 now[1] = (now[1] + 10) % 60;
                 
+                // 길이 초과
                 if(now[0] * 100 + now[1] > len){
                     now[0] = len / 100;
                     now[1] = len % 100;
                 }
                 System.out.println("next: " + now[0] + ":" + now[1]);
+            
+            // prev
             } else {
                 if(now[1] < 10) {
                     now[0]--;
                     now[1] += 50;
-                }else now[1] -= 10;
+                } else now[1] -= 10;
+                
+                // 00:00 미만
                 if(now[0] * 100 + now[1] < 0){
                     now[0] = 0;
                     now[1] = 0;
@@ -41,6 +50,8 @@ class Solution {
             }
             n = now[0] * 100 + now[1];
         }
+        
+        // 마지막 오프닝 체크
         if(start <= n && end >= n){
                 now[0] = end / 100;
                 now[1] = end % 100;
