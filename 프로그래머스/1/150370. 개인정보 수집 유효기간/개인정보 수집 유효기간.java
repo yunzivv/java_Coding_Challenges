@@ -5,7 +5,6 @@ class Solution {
     public int[] solution(String today, String[] terms, String[] privacies) {
         
         List<Integer> list = new ArrayList<>();
-        
         int todayInt = Integer.parseInt(today.replace(".", ""));
         
         HashMap<Character, Integer> map = new HashMap<Character, Integer>();
@@ -17,11 +16,11 @@ class Solution {
                 .mapToInt(Integer::parseInt)
                 .toArray();
             
+            // 유효기간
             arr[1] += map.get(privacies[i].charAt(11));
-            System.out.println(arr[0] * 10000 + arr[1] * 100 + arr[2]);
             
+            // 다음 년도
             if(arr[1] > 12){
-                System.out.print("big : ");
                 arr[0] += arr[1] / 12;
                 arr[1] %= 12;
                 if(arr[1] == 0){
@@ -30,6 +29,7 @@ class Solution {
                 }
             }
             
+            // 오늘과 비교
             if(arr[0] * 10000 + arr[1] * 100 + arr[2] <= todayInt) {
                 list.add(i + 1);
             }
