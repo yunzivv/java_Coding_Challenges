@@ -1,12 +1,9 @@
-import java.util.*;
 class Solution {
     public long solution(long n) {
 
-        double d = Math.sqrt(n);
-        if(d == (int)d) {
-            d += 1;
-        } else return -1;
-
-        return (long)d * (long)d;
+        if (Math.pow((int)Math.sqrt(n), 2) == n) {
+            return (long) Math.pow(Math.sqrt(n) + 1, 2);
+        }
+        return -1;
     }
 }
