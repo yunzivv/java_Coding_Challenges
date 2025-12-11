@@ -1,19 +1,13 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(int n) {
-        int a = 0;
-        for(int i = 1; i <= n; i++){
-            if(n % i == 0) {
-                a++;
+        List<Integer> answer = new ArrayList<>();
+        for(int i=1; i<=n; i++){
+            if(n % i == 0){
+                answer.add(i);
             }
         }
-        int[] answer = new int[a];
-        a = 0;
-        for(int i = 1; i <= n; i++){
-            if(n % i == 0) {
-                answer[a] = i;
-                a++;
-            }
-        }
-        return answer;
+        return answer.stream().mapToInt(x -> x).toArray();
     }
 }
