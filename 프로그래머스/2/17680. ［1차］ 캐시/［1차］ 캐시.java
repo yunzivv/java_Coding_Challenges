@@ -7,7 +7,7 @@ class Solution {
         
         int answer = 0;
         int index = 0;
-        LinkedHashSet<String> cache = new LinkedHashSet<>();
+        List<String> cache = new ArrayList<>();
         
         for(String city : cities){
             city = city.toLowerCase();
@@ -16,13 +16,7 @@ class Solution {
                 cache.remove(city);
                 answer++;
             } else {
-                if(cache.size() == cacheSize){
-                    Iterator<String> it = cache.iterator();
-                    if (it.hasNext()) {
-                        it.next();
-                        it.remove();
-                    }
-                }
+                if(cache.size() == cacheSize) cache.remove(0);
                 answer += 5;
             }
             
